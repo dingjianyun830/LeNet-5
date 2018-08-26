@@ -53,4 +53,4 @@ CNN.F6.featureMap = ConvFM3(CNN.C5.featureMap,para.F6.W);
 % 2. add bias
 CNN.F6.featureMap = CNN.F6.featureMap + para.F6.b;
 % 3. sigmoid
-CNN.F6.featureMap = sigmoid_exp(CNN.F6.featureMap);
+CNN.F6.featureMap = squashing(CNN.F6.featureMap);

@@ -15,7 +15,7 @@ while count < Train.time
     end
     
     % back-propagation
-    deltaPara = backPropagation(CNN, para);
+    deltaPara = backPropagation(CNN, para, E(label));
     
     % Update the parameter
     para = UpdatePara(para,deltaPara,Train.sigma);

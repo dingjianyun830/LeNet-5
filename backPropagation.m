@@ -1,5 +1,5 @@
 % back-propagation function
-function deltaPara = backPropagation(CNN,para)
+function deltaPara = backPropagation(CNN,para,loss)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % this is a back propagation algorithm to updated the para
 % input -- loss: loss energy
@@ -9,7 +9,7 @@ function deltaPara = backPropagation(CNN,para)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Output layer to F6 layer
-theta7 = 1 - CNN.F6.featureMap;
+theta7 = 2*sqrt(loss) - CNN.F6.featureMap;
 
 % F6 to C5 layer
 theta6 = theta7 .* sigmoid_derivation(CNN.F6.featureMap);
